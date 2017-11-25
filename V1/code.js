@@ -96,21 +96,6 @@ for(var i = 0;i < Data.length;i++){
   }
     });
  }
-/*
-var bfs = cy.elements().bfs('#X', function(){}, true);//A handler function that is called when a node is visited in the search
-var i = 0;
-var highlightNextEle = function(){
-  if( i < bfs.path.length ){
-    bfs.path[i].addClass('highlighted');
-
-    i++;
-    setTimeout(highlightNextEle, 1000);
-  }
-};
-
-// kick off first highlight
-highlightNextEle();
-*/
   }, 'json'); 
 });
 

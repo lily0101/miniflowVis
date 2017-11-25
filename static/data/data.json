@@ -1,0 +1,291 @@
+[{
+  "data": {
+    "id": "X"
+  },
+  "position": {
+    "x": 122.50374073928583,
+    "y": 367.98329788349827
+  },
+  "group": "nodes",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+},{
+	"data":{
+	 "id": "L1"
+	},
+	"group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "W1",
+	 "parent":"L1"
+	},
+	"group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "b1",
+	 "parent":"L1"
+	},
+	"group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "logit1",
+	 "parent":"L1"
+	},
+	"group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "L2"
+	},
+	"group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "W2",
+	 "parent":"L2"
+	},
+	"group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "b2",
+	 "parent":"L2"
+	},
+	  "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "logit2",
+	 "parent":"L2"
+	},
+	"group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "S1"
+	},
+	"group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "MSE"
+	},
+	"group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+	"data":{
+	 "id": "Y"
+	},
+	  "group": "nodes",
+    "removed": false,
+    "selected": false,
+    "selectable": true,
+    "locked": false,
+    "grabbed": false,
+    "grabbable": true,
+    "classes": ""
+},{
+    "data": {
+    "id": "e0",
+    "source": "X",
+    "target": "logit1"
+  },
+  "position": {},
+  "group": "edges",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+},{
+     "data": {
+    "id": "e1",
+    "source": "W1",
+    "target": "logit1"
+  },
+  "position": {},
+  "group": "edges",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+},{
+     "data": {
+    "id": "e2",
+    "source": "b1",
+    "target": "logit1"
+  },
+  "position": {},
+  "group": "edges",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+},{
+     "data": {
+    "id": "e3",
+    "source": "logit1",
+    "target": "S1"
+  },
+  "position": {},
+  "group": "edges",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+},{
+     "data": {
+    "id": "e4",
+    "source": "S1",
+    "target": "logit2"
+  },
+  "position": {},
+  "group": "edges",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+},{
+     "data": {
+    "id": "e5",
+    "source": "W2",
+    "target": "logit2"
+  },
+  "position": {},
+  "group": "edges",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+},{
+     "data": {
+    "id": "e6",
+    "source": "b2",
+    "target": "logit2"
+  },
+  "position": {},
+  "group": "edges",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+},{
+     "data": {
+    "id": "e7",
+    "source": "logit2",
+    "target": "MSE"
+  },
+  "position": {},
+  "group": "edges",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+},{
+     "data": {
+    "id": "e8",
+    "source": "Y",
+    "target": "MSE"
+  },
+  "position": {},
+  "group": "edges",
+  "removed": false,
+  "selected": false,
+  "selectable": true,
+  "locked": false,
+  "grabbed": false,
+  "grabbable": true,
+  "classes": ""
+}
+]

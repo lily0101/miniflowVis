@@ -1,50 +1,40 @@
-$(function(){ // on dom ready
- $.get('../data/record.json', function(result) { //../record.json
-  var Data =[
-      { data: { id: 'X' } },
-      { data: { id: 'W1' } },
-      { data: { id: 'b1' } },
-      { data: { id: 'L1' } },
-      { data: { id: 'S1' } },
-      { data: { id: 'L2' } },
-      { data: { id: 'W2' } },
-      { data: { id: 'b2' } },
-      { data: { id: 'y' } },
-      { data: { id: 'MSE' } }
-    ];
-    var Edge = [
-      { data: { source: 'X', target: 'L1' } },
-      { data: { source: 'W1', target: 'L1' } },
-      { data: { source: 'b1', target: 'L1' } },
-      { data: { source: 'L1', target: 'S1' } },
-      { data: { source: 'W2', target: 'L2' } },
-      { data: { source: 'b2', target: 'L2' } },
-      { data: { source: 'S1', target: 'L2' } },
-      { data: { source: 'L2', target: 'MSE' } },
-      { data: { source: 'y', target: 'MSE' } }
-    ];
-var cy = window.cy = cytoscape({
-  container: document.getElementById('cy'),
-  
-
-  boxSelectionEnabled: false,
-  autounselectify: true,
-
-  layout: {
-    name: 'dagre'
-  },
-
-  style: cytoscape.stylesheet()
+//read the nodes and edges information to cy
+fetch('/static/data/data.json', {mode: 'no-cors'})
+  .then(function(res) {
+    return res.json()
+  })
+  .then(function(data) {
+    var cy = window.cy = cytoscape({
+      container: document.getElementById('cy'),
+      
+      layout: {
+        name: 'dagre'
+      },
+      
+    style: cytoscape.stylesheet()
     .selector('node')
       .css({
-        'content': 'data(id)'
+        'content': 'data(id)',
+         'text-valign': 'center',
+        'text-halign': 'center',
+        'background-color': 'red'
       })
+    .selector('$node > node')
+       .css({
+        'padding-top': '10px',
+        'padding-left': '10px',
+        'padding-bottom': '10px',
+        'padding-right': '10px',
+        'text-valign': 'top',
+        'text-halign': 'center',
+        'background-color': '#bbb'
+       })
     .selector('edge')
       .css({
         'curve-style': 'bezier',
         'target-arrow-shape': 'triangle',
         'width': 4,
-        'line-color': '#ddd',
+        'line-color': 'blue',
         'target-arrow-color': '#ddd'
       })
     .selector('.highlighted')
@@ -55,54 +45,41 @@ var cy = window.cy = cytoscape({
         'transition-property': 'background-color, line-color, target-arrow-color',
         'transition-duration': '0.5s'
       }),
- 
-  elements: {
-    nodes: Data,
-    edges: Edge
-  },
-   ready: function(){
+
+      elements: data,
+      ready: function(){
     window.cy = this;
   },
-  
-});
+ });
+}); 
+//do something for those nodes
+var nodes = cy.nodes()
+console.log("what?")
+//Sort the nodes in topological order
+var topSort = new Array("X","e0","W1","e1","b1","e2","logit1","e3","S1","e4","W2","e5","b2","e6","logit2","e7","Y","e8","MSE")
+
+//forward
+function forward(){
+  //read the for ward data
+}
+function backward(){
+
+}
 
 
-var nodes = cy.nodes();
-for(var i = 0;i < Data.length;i++){
-    console.log(nodes[i].data('id')); 
-    var temp = "none"
-    for(var n of result){
-      if(n.id == nodes[i].data('id'))
-      {
-        console.log(n);
-        nodes[i].addClass('highlighted')
-        temp = n.id;
-      }
-       
-    }
-    temp = temp.toString();
-    nodes[i].qtip({
-      content:temp,
-      position:{
-        my: 'top center',
-        at: 'bottom center'
-      },
-      style: {
-      classes: 'qtip-bootstrap',
-      tip: {
-        width: 16,
-        height: 8
-    }
-  }
-    });
- }
-/*
-var bfs = cy.elements().bfs('#X', function(){}, true);//A handler function that is called when a node is visited in the search
+//get the degree of the node
+var degree = cy.$().dc({ root: '#logit1' ,directed:true})
+console.log(degree.indegree)
+var dcn = cy.$().dcn();
+console.log( 'dcn of logit1: ' + dcn.degree('#X') );
+
+
 var i = 0;
 var highlightNextEle = function(){
-  if( i < bfs.path.length ){
-    bfs.path[i].addClass('highlighted');
-
+  if( i < topSort.length ){
+    console.log(topSort[i])
+    console.log(cy.$("#"+topSort[i]))
+    cy.$("#"+topSort[i]).addClass('highlighted');
     i++;
     setTimeout(highlightNextEle, 1000);
   }
@@ -110,8 +87,5 @@ var highlightNextEle = function(){
 
 // kick off first highlight
 highlightNextEle();
-*/
-  }, 'json'); 
-});
 
 

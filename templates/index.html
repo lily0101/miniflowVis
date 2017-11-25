@@ -11,17 +11,32 @@
     <!--js-->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script type = "text/javascript" src="../static/js/cytoscape.min.js"></script>
-    <script type="text/javascript" src="../static/js/jquery.qtip.min.js"></script>
-    <script type = "text/javascript" src="../static/js/cytoscape-qtip.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.2.3/cytoscape.min.js"></script>
+    <script type="text/javascript" src="/static/lib/jquery.qtip.min.js"></script>
+    <script type = "text/javascript" src="/static/lib/cytoscape-qtip.js"></script>
+     <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-cose-bilkent/1.6.5/cytoscape-cose-bilkent.js"></script>
     <script src="https://cdn.rawgit.com/cpettitt/dagre/v0.7.4/dist/dagre.min.js"></script>
     <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-dagre/1.5.0/cytoscape-dagre.js"></script>
+    
   </head>
   <body>
-    <h1>cytoscape-dagre demo</h1>
+    
     <div id="cy"></div>
-    <!-- Load appplication code at the end to ensure DOM is loaded -->
-    <script src="../static/js/code.js"></script>
+
+    <span class="fa fa-bars config-toggle" id="config-toggle"></span>
+
+    <div id="config" class="config">
+
+      <div class="preamble">
+        <span class="label label-info">神经网络前向传播后巷传播示意图</span>
+
+        <p>这是一个关于神经网络数据流前向传播后向传播的示意图</p>
+        <div id = "button">
+            <button type = "button" onclick = "forward()">forward</button>
+            <button type = "button" onclick = "backward()">backward</button>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/code.js"></script>
   </body>
 </html>
